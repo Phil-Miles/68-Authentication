@@ -25,7 +25,7 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/register', methods=['GET','POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
         return render_template('register.html')
@@ -56,7 +56,7 @@ def logout():
 
 @app.route('/download')
 def download():
-    pass
+    return send_from_directory('static', filename='files/cheat_sheet.pdf')
 
 
 if __name__ == "__main__":
